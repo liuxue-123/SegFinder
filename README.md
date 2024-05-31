@@ -10,14 +10,14 @@ Step 2: Downloading and configuring the database
 
 ### PROT_ACC2TAXID
 # Download the `PROT_ACC2TAXID` file
-``` wget -c https://ftp.ncbi.nlm.nih.gov/pub/taxonomy/accession2taxid/prot.accession2taxid.gz
-wget -c https://ftp.ncbi.nlm.nih.gov/pub/taxonomy/accession2taxid/prot.accession2taxid.gz.md5
+``` wget -c https://ftp.ncbi.nlm.nih.gov/pub/taxonomy/accession2taxid/prot.accession2taxid.gz ```
+```wget -c https://ftp.ncbi.nlm.nih.gov/pub/taxonomy/accession2taxid/prot.accession2taxid.gz.md5```
 
 # Check for the file integrity
-md5sum -c prot.accession2taxid.gz.md5
+```md5sum -c prot.accession2taxid.gz.md5```
 
 # Unzip the files and onfiguration
-gunzip -c prot.accession2taxid.gz > PHYRVM_DB_PATH/accession2taxid/prot.accession2taxid ```
+```gunzip -c prot.accession2taxid.gz > PHYRVM_DB_PATH/accession2taxid/prot.accession2taxid```
 
 ### NCBI Non-Redundant Protein Database (NR)
 ### NCBI Nucleotide Sequence Database (NT)
