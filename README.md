@@ -5,14 +5,13 @@
 SegFinder detection pipeline. a, Schematic overview of the discovery of RdRP for RNA viruses. The inputs are fastq files for multiple meta-transcriptome libraries. rRNA, ribosomal RNA; NR, Non-Redundant Protein Sequence Database; NT, Nucleotide Sequence Database. b, The processing pipeline of correlation calculation. L, library; C, contig; c, Schematic illustration of filtering of segmented RNA virus clusters. Cor, correlation; TPM, Transcripts Per Kilobase of exon model per Million mapped reads;
 
 ## 1.Installation
-Step 1: Install conda and SegFinder dependencies
+  ### 1.1 Install conda and SegFinder dependencies
 
 ```conda env create -f environment.yml```
 
-Step 2: Downloading and configuring the database
+### 1.2 Downloading and configuring the database
 
-
-### PROT_ACC2TAXID
+#### PROT_ACC2TAXID
 #### Download the `PROT_ACC2TAXID` file
 ``` wget -c https://ftp.ncbi.nlm.nih.gov/pub/taxonomy/accession2taxid/prot.accession2taxid.gz ```
 ```wget -c https://ftp.ncbi.nlm.nih.gov/pub/taxonomy/accession2taxid/prot.accession2taxid.gz.md5```
@@ -23,12 +22,12 @@ Step 2: Downloading and configuring the database
 #### Unzip the files and onfiguration
 ```gunzip -c prot.accession2taxid.gz > PHYRVM_DB_PATH/accession2taxid/prot.accession2taxid```
 
-#### NCBI Non-Redundant Protein Database (NR)
-#### NCBI Nucleotide Sequence Database (NT)
+#### [NCBI Non-Redundant Protein Database (NR)](https://ftp.ncbi.nlm.nih.gov/blast/db/FASTA/)
+#### [NCBI Nucleotide Sequence Database (NT)](https://ftp.ncbi.nlm.nih.gov/blast/db/FASTA/)
 #### Virus-free non-redundant nucleotide (virus-free nt)
 
 
-## Usage
+## 2.Usage
 
 #### Step 1:discovery of RdRP for RNA viruses 
 
