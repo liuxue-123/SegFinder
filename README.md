@@ -1,0 +1,2 @@
+# SegFinder
+segmented virus finder
