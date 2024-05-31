@@ -41,7 +41,7 @@ thread=10
 cor=0.8
 rm_length=600
 min_rdrp_multi=50
-min_nordrp_multi=20
+min_nordrp_multi=10
 min_TPM=200
 library_ID_flag=0
 quantify_method=salmon
@@ -104,30 +104,30 @@ if [ $preprocess == true ];then
 	for file in `cat ${present_loc}/file_list.txt`;
 	do
 #########################assemble###################################################
-#		if [ $datatype -eq 1 ]; then 
-#			fastp -i $rawData_loc/"$file".fq.gz -o $rawData_loc/"$file"-fp.fq.gz -w ${thread}
-#			ribodetector_cpu -l 100 -i $rawData_loc/"$file"-fp.fq.gz -t ${thread} -e norrna  -o $rawData_loc/"$file".clean.fq.gz
-#		fi
-#        if [ $datatype -eq 2 ]; then 
-#			fastp -i $rawData_loc/"$file"_1.fq.gz -I $rawData_loc/"$file"_2.fq.gz -o $rawData_loc/"$file"_1-fp.fq.gz -O  $rawData_loc/"$file"_2-fp.fq.gz -w ${thread}
-#			ribodetector_cpu -l 100 -i $rawData_loc/"$file"_1-fp.fq.gz $rawData_loc/"$file"_2-fp.fq.gz  -t ${thread} -e norrna  -o $rawData_loc/"$file".clean_{1,2}.fq.gz
-#			cd $rawData_loc
-#			rm -rf $rawData_loc/"$file"_1-fp.fq.gz $rawData_loc/"$file"_2-fp.fq.gz
-#			rm -rf ${present_loc}/fastp.html ${present_loc}/fastp.json
-#		fi
+		if [ $datatype -eq 1 ]; then 
+			fastp -i $rawData_loc/"$file".fq.gz -o $rawData_loc/"$file"-fp.fq.gz -w ${thread}
+			ribodetector_cpu -l 100 -i $rawData_loc/"$file"-fp.fq.gz -t ${thread} -e norrna  -o $rawData_loc/"$file".clean.fq.gz
+		fi
+       if [ $datatype -eq 2 ]; then 
+			fastp -i $rawData_loc/"$file"_1.fq.gz -I $rawData_loc/"$file"_2.fq.gz -o $rawData_loc/"$file"_1-fp.fq.gz -O  $rawData_loc/"$file"_2-fp.fq.gz -w ${thread}
+			ribodetector_cpu -l 100 -i $rawData_loc/"$file"_1-fp.fq.gz $rawData_loc/"$file"_2-fp.fq.gz  -t ${thread} -e norrna  -o $rawData_loc/"$file".clean_{1,2}.fq.gz
+			cd $rawData_loc
+			rm -rf $rawData_loc/"$file"_1-fp.fq.gz $rawData_loc/"$file"_2-fp.fq.gz
+			rm -rf ${present_loc}/fastp.html ${present_loc}/fastp.json
+		fi
 				
-#		if [ $assemble_method == spades ]; then
-#			if [ $datatype -eq 1 ]; then spades.py --meta --phred-offset 33 -s $rawData_loc/"$file".clean.fq.gz -t ${thread} -o $rawData_loc/"$file".assemble; fi
-#			if [ $datatype -eq 2 ]; then spades.py --meta --phred-offset 33 -1 $rawData_loc/"$file".clean_1.fq.gz -2 $rawData_loc/"$file".clean_2.fq.gz -t ${thread} -o $rawData_loc/"$file".assemble; fi
-#			cat $rawData_loc/"$file".assemble/contigs.fasta |sed 's/ /_/g' | sed 's/=/_/g'| sed "s/>/>"$file"_/g" >$rawData_loc/"$file".assemble/"$file".fa_modify
-#		fi
+		if [ $assemble_method == spades ]; then
+			if [ $datatype -eq 1 ]; then spades.py --meta --phred-offset 33 -s $rawData_loc/"$file".clean.fq.gz -t ${thread} -o $rawData_loc/"$file".assemble; fi
+			if [ $datatype -eq 2 ]; then spades.py --meta --phred-offset 33 -1 $rawData_loc/"$file".clean_1.fq.gz -2 $rawData_loc/"$file".clean_2.fq.gz -t ${thread} -o $rawData_loc/"$file".assemble; fi
+			cat $rawData_loc/"$file".assemble/contigs.fasta |sed 's/ /_/g' | sed 's/=/_/g'| sed "s/>/>"$file"_/g" >$rawData_loc/"$file".assemble/"$file".fa_modify
+		fi
 ###################################################################################		
-#	if [ $assemble_method == megahit ] || [ ! -s $rawData_loc/"$file".assemble/contigs.fasta ]; then rm -rf $rawData_loc/"$file".assemble;
-#		if [ $datatype -eq 2 ]; then megahit -1 $rawData_loc/"$file".clean_1.fq.gz  -2 $rawData_loc/"$file".clean_2.fq.gz  --num-cpu-threads ${thread}  --memory 0.9  -o $rawData_loc/"$file".assemble; fi
-#		if [ $datatype -eq 1 ]; then megahit -r $rawData_loc/"$file".clean.fq.gz --num-cpu-threads ${thread} --memory 0.9 -o $rawData_loc/"$file".assemble; fi
-#		cat $rawData_loc/"$file".assemble/final.contigs.fa |sed 's/ /_/g' | sed 's/=/_/g'| sed "s/>/>"$file"_/g" >$rawData_loc/"$file".assemble/"$file".fa_modify
-#	  fi
-#	  cp $rawData_loc/"$file".assemble/"$file".fa_modify $rawData_loc/"$file".megahit.fa
+	if [ $assemble_method == megahit ] || [ ! -s $rawData_loc/"$file".assemble/contigs.fasta ]; then rm -rf $rawData_loc/"$file".assemble;
+		if [ $datatype -eq 2 ]; then megahit -1 $rawData_loc/"$file".clean_1.fq.gz  -2 $rawData_loc/"$file".clean_2.fq.gz  --num-cpu-threads ${thread}  --memory 0.9  -o $rawData_loc/"$file".assemble; fi
+		if [ $datatype -eq 1 ]; then megahit -r $rawData_loc/"$file".clean.fq.gz --num-cpu-threads ${thread} --memory 0.9 -o $rawData_loc/"$file".assemble; fi
+		cat $rawData_loc/"$file".assemble/final.contigs.fa |sed 's/ /_/g' | sed 's/=/_/g'| sed "s/>/>"$file"_/g" >$rawData_loc/"$file".assemble/"$file".fa_modify
+	  fi
+	  cp $rawData_loc/"$file".assemble/"$file".fa_modify $rawData_loc/"$file".megahit.fa
 #########################Finding rna virus RdRP######################################
 	  diamond blastx \
 			   -q $rawData_loc/"$file".megahit.fa \
