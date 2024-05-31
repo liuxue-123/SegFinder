@@ -2,6 +2,8 @@
 ## segmented virus finder workflow
 ![](https://github.com/liuxue-123/SegFinder/blob/main/flow/workflow.png)
 
+SegFinder detection pipeline. a, Schematic overview of the discovery of RdRP for RNA viruses. The inputs are fastq files for multiple meta-transcriptome libraries. rRNA, ribosomal RNA; NR, Non-Redundant Protein Sequence Database; NT, Nucleotide Sequence Database. b, The processing pipeline of correlation calculation. L, library; C, contig; c, Schematic illustration of filtering of segmented RNA virus clusters. Cor, correlation; TPM, Transcripts Per Kilobase of exon model per Million mapped reads;
+
 ## Installation
 Step 1: Install conda and SegFinder dependencies
 
