@@ -4,8 +4,7 @@ segmented virus finder
 ## Installation
 Step 1: Install conda and SegFinder dependencies
 
-
-'<conda env create -f environment.yml>'
+```conda env create -f environment.yml```
 
 Step 2: Downloading and configuring the database
 
