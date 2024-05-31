@@ -1,5 +1,5 @@
 # SegFinder
-segmented virus finder workflow
+## segmented virus finder workflow
 ![](https://github.com/liuxue-123/SegFinder/blob/main/flow/workflow.png)
 
 ## Installation
