@@ -1,6 +1,6 @@
 # SegFinder
 segmented virus finder workflow
-![](https://github.com/liuxue-123/SegFinder/blob/main/flow/Flow.tif)
+![](https://github.com/liuxue-123/SegFinder/blob/main/flow/workflow.png)
 
 ## Installation
 Step 1: Install conda and SegFinder dependencies
