@@ -33,7 +33,6 @@ gunzip -c prot.accession2taxid.gz > Seg_DB_PATH/accession2taxid/prot.accession2t
   #### 1.2.4 Virus-free non-redundant nucleotide (virus-free nt)
 ```
 python virus-free.sh
-
 ```
 *******************************************************************************************
 ## 2.Usage
