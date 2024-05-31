@@ -7,7 +7,9 @@ SegFinder detection pipeline. a, Schematic overview of the discovery of RdRP for
 ## 1.Installation
   ### 1.1 Install conda and SegFinder dependencies
 
-```conda env create -f environment.yml```
+```
+conda env create -f environment.yml
+```
 
 ### 1.2 Downloading and configuring the database
 
