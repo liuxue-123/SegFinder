@@ -29,7 +29,10 @@ Step 2: Downloading and configuring the database
 
 
 ## Usage
+
+Step 1:discovery of RdRP for RNA viruses
 ./SegFinder.sh [option] --help 
 ```./SegFinder.sh --indata /home/liuxue/data/PRJDB11882/data --taxidDB /home/liuxue/software/prot.accession2taxid --nt_noViruses /home/liuxue/database/NT-novirus/nt_noViruses-2023-5-8/nt_noViruses --nt /home/liuxue/software/nt/nt_20221015/nt  --thread 20 --datatype 2  --method salmon --preprocess true  --assemble megahit  --nr /home/liuxue/database/NR/nr --only_rdrp_find 1```
 
+Step 2:segmented RNA virus finder
 ```./SegFinder.sh --indata /home/liuxue/data/bioreactor_sludge/data  --taxidDB /home/liuxue/software/prot.accession2taxid --nt_noViruses /home/liuxue/database/NT-novirus/nt_noViruses-2023-5-8/nt_noViruses --nt /home/liuxue/software/nt/nt_20221015/nt  --thread 20  --rm_length 600 --datatype 2 --cor 0.79 --library_ID $file --method salmon  --nr /home/liuxue/database/NR/nr ```
