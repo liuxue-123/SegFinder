@@ -1,0 +1,2 @@
+conda env create -f segFinder.yml
+conda activate segFinder
