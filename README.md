@@ -39,10 +39,30 @@ gunzip -c prot.accession2taxid.gz > Seg_DB_PATH/accession2taxid/prot.accession2t
 ./SegFinder.sh [option] --help  
 
 ```
-./SegFinder.sh --indata PATH/data --taxidDB Seg_DB_PATH/prot.accession2taxid --nt_noViruses PATH/nt_noViruses --nt Seg_DB_PATH/nt_20221015/nt  --thread 20 --datatype 2  --method salmon --preprocess true  --assemble megahit  --nr Seg_DB_PATH/nr --only_rdrp_find 1
+./SegFinder.sh --indata PATH/data \
+               --taxidDB Seg_DB_PATH/prot.accession2taxid \
+               --nt_noViruses PATH/nt_noViruses \
+               --nt Seg_DB_PATH/nt_20221015/nt \
+               --thread 20 \
+               --datatype 2 \
+               --method salmon \
+               --preprocess true  \
+               --assemble megahit  \
+               --nr Seg_DB_PATH/nr \
+               --only_rdrp_find 1
 ```
 
 #### Step 2: segmented RNA virus finder 
 ```
-./SegFinder.sh --indata PATH/data  --taxidDB Seg_DB_PATH/prot.accession2taxid --nt_noViruses Seg_DB_PATH/nt_noViruses --nt Seg_DB_PATH/nt_20221015/nt  --thread 20  --rm_length 600 --datatype 2 --cor 0.79 --library_ID $file --method salmon  --nr Seg_DB_PATH/nr
+./SegFinder.sh --indata PATH/data \
+               --taxidDB Seg_DB_PATH/prot.accession2taxid \
+               --nt_noViruses Seg_DB_PATH/nt_noViruses \
+               --nt Seg_DB_PATH/nt_20221015/nt  \
+               --thread 20 \
+               --rm_length 600 \
+               --datatype 2 \
+               --cor 0.79 \
+               --library_ID $file \
+               --method salmon  \
+               --nr Seg_DB_PATH/nr
 ```  
