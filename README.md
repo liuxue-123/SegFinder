@@ -22,7 +22,8 @@ md5sum -c prot.accession2taxid.gz.md5
 
 #Unzip the files and onfiguration
 gunzip -c prot.accession2taxid.gz > PHYRVM_DB_PATH/accession2taxid/prot.accession2taxid
-``` <br>  
+```
+
 
   #### [1.2.2 NCBI Non-Redundant Protein Database (NR)](https://ftp.ncbi.nlm.nih.gov/blast/db/FASTA/)
   #### [1.2.3 NCBI Nucleotide Sequence Database (NT)](https://ftp.ncbi.nlm.nih.gov/blast/db/FASTA/)
