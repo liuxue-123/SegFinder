@@ -4,7 +4,7 @@
 
 SegFinder detection pipeline. a, Schematic overview of the discovery of RdRP for RNA viruses. The inputs are fastq files for multiple meta-transcriptome libraries. rRNA, ribosomal RNA; NR, Non-Redundant Protein Sequence Database; NT, Nucleotide Sequence Database. b, The processing pipeline of correlation calculation. L, library; C, contig; c, Schematic illustration of filtering of segmented RNA virus clusters. Cor, correlation; TPM, Transcripts Per Kilobase of exon model per Million mapped reads;
 
-## Installation
+## 1.Installation
 Step 1: Install conda and SegFinder dependencies
 
 ```conda env create -f environment.yml```
@@ -25,7 +25,7 @@ Step 2: Downloading and configuring the database
 
 #### NCBI Non-Redundant Protein Database (NR)
 #### NCBI Nucleotide Sequence Database (NT)
-
+#### Virus-free non-redundant nucleotide (virus-free nt)
 
 
 ## Usage
