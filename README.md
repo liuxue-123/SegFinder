@@ -34,7 +34,7 @@ gunzip -c prot.accession2taxid.gz > Seg_DB_PATH/accession2taxid/prot.accession2t
 ```
 python virus-free.sh
 ```
-*******************************************************************************************
+
 ## 2.Usage
 
 #### Step 1: discovery of RdRP for RNA viruses 
