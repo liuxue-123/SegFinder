@@ -39,8 +39,10 @@ wget -t 0 -c https://ftp.ncbi.nlm.nih.gov/blast/db/FASTA/nt.gz
 ```
   #### 1.2.4 Virus-free non-redundant nucleotide (virus-free nt)
 ```
-wget -c https://ftp.ncbi.nlm.nih.gov/pub/taxonomy/accession2taxid/nucl_gb.accession2taxid.gz
-wget -c https://ftp.ncbi.nlm.nih.gov/pub/taxonomy/taxdump.tar.gz
+wget -t 0 -c https://ftp.ncbi.nlm.nih.gov/pub/taxonomy/accession2taxid/nucl_gb.accession2taxid.gz
+gunzip -c nucl_gb.accession2taxid.gz > Seg_DB_PATH/accession2taxid/nucl_gb.accession2taxid
+wget -t 0 -c https://ftp.ncbi.nlm.nih.gov/pub/taxonomy/taxdump.tar.gz
+tar -zxvf taxdump.tar.gz
 python virus-free.sh
 ```
 
