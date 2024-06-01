@@ -64,7 +64,7 @@ python virus-free.sh
                --thread 20 \
                --rm_length 600 \
                --datatype 2 \
-               --cor 0.79 \
+               --cor 0.8 \
                --library_ID $file \
                --method salmon  \
                --nr Seg_DB_PATH/nr
