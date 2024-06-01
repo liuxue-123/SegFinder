@@ -45,7 +45,7 @@ python virus-free.sh
 ./SegFinder.sh --indata PATH/data \
                --taxidDB Seg_DB_PATH/prot.accession2taxid \
                --nt_noViruses PATH/nt_noViruses \
-               --nt Seg_DB_PATH/nt_20221015/nt \
+               --nt Seg_DB_PATH/nt \
                --thread 20 \
                --datatype 2 \
                --method salmon \
@@ -60,7 +60,7 @@ python virus-free.sh
 ./SegFinder.sh --indata PATH/data \
                --taxidDB Seg_DB_PATH/prot.accession2taxid \
                --nt_noViruses Seg_DB_PATH/nt_noViruses \
-               --nt Seg_DB_PATH/nt_20221015/nt  \
+               --nt Seg_DB_PATH/nt  \
                --thread 20 \
                --rm_length 600 \
                --datatype 2 \
