@@ -79,30 +79,30 @@ Note: --input:nt database location
 
 ```
 ./SegFinder.sh --indata PATH/data \
-               --taxidDB Seg_DB_PATH/prot.accession2taxid \
-               --nt_noViruses PATH/nt_noViruses \
-               --nt Seg_DB_PATH/nt \
+               --taxidDB Seg_DB/accession2taxid/prot.accession2taxid \
+               --nt_noViruses Seg_DB/nt/nt_noViruses \
+               --nt Seg_DB/nt \
                --thread 20 \
                --datatype 2 \
                --method salmon \
                --preprocess true  \
                --assemble megahit  \
-               --nr Seg_DB_PATH/nr \
+               --nr Seg_DB/nr \
                --only_rdrp_find 1
 ```
 Note:file_list.txt contains the prefix name of the file;The file name must be prefixed_1/2.fq.gz format
 #### Step 2: segmented RNA virus finder 
 ```
 ./SegFinder.sh --indata PATH/data \
-               --taxidDB Seg_DB_PATH/prot.accession2taxid \
-               --nt_noViruses Seg_DB_PATH/nt_noViruses \
-               --nt Seg_DB_PATH/nt  \
+               --taxidDB Seg_DB/accession2taxid/prot.accession2taxid \
+               --nt_noViruses Seg_DB/nt_noViruses \
+               --nt Seg_DB/nt  \
                --thread 20 \
                --rm_length 600 \
                --datatype 2 \
                --cor 0.8 \
                --library_ID $file \
                --method salmon  \
-               --nr Seg_DB_PATH/nr
-Note:list.txt contains the prefix name of the file;The file name must be prefixed_1/2.fq.gz format
+               --nr Seg_DB/nr
 ```  
+Note:file:Indicates the input file prefix name, either a single file or a single file (list.txt);list.txt contains the prefix name of the file;The file name must be prefixed_1/2.fq.gz format
