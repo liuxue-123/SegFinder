@@ -90,7 +90,7 @@ Note: --input:nt database location
                --nr Seg_DB/nr \
                --only_rdrp_find 1
 ```
-Note:file_list.txt contains the prefix name of the file;The file name must be prefixed_1/2.fq.gz format
+Note: file_list.txt contains the prefix name of the file;The file name must be prefixed_1/2.fq.gz format
 #### Step 2: segmented RNA virus finder 
 ```
 ./SegFinder.sh --indata PATH/data \
@@ -105,4 +105,4 @@ Note:file_list.txt contains the prefix name of the file;The file name must be pr
                --method salmon  \
                --nr Seg_DB/nr
 ```  
-Note:file:Indicates the input file prefix name, either a single file or a single file (list.txt);list.txt contains the prefix name of the file;The file name must be prefixed_1/2.fq.gz format
+Note: file:Indicates the input file prefix name, either a single file or a single file (list.txt);list.txt contains the prefix name of the file;The file name must be prefixed_1/2.fq.gz format
