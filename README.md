@@ -14,7 +14,7 @@ conda activate SegFinder
 
 ### 1.2 Downloading and configuring the database
 
-  #### 1.2.1 PROT_ACC2TAXID
+  #### 1.2.1 prot.accession2taxid
 
 ```
 mkdir Seg_DB
@@ -49,22 +49,27 @@ wget -t 0 -c https://ftp.ncbi.nlm.nih.gov/blast/db/FASTA/nt.gz
 ```
   #### 1.2.4 Virus-free non-redundant nucleotide (virus-free nt)
 ```
+#download nucl_gb.accession2taxid
 cd Seg_DB/accession2taxid
 wget -t 0 -c https://ftp.ncbi.nlm.nih.gov/pub/taxonomy/accession2taxid/nucl_gb.accession2taxid.gz
 gunzip -c nucl_gb.accession2taxid.gz > Seg_DB/accession2taxid/nucl_gb.accession2taxid
+
+#download taxdump
 mdkir Seg_DB/taxdump
 wget -t 0 -c https://ftp.ncbi.nlm.nih.gov/pub/taxonomy/taxdump.tar.gz
 cd Seg_DB/taxdump
 tar -zxvf taxdump.tar.gz
+
 #download ref_viruses_rep_genomes
 mkdir Seg_DB/ref_viruses_rep_genomes
 cd Seg_DB/ref_viruses_rep_genomes
 wget -t 0 -c https://figshare.com/ndownloader/files/46795402
 tar -zxvf ref_viruses_rep_genomes.tar.gz
+
 #Handling nt database
 python3 process_sequences.py --input Seg_DB/nt/ --out Seg_DB/nt/ --threads 40  --nucl_gb_accession2taxid_path Seg_DB/accession2taxid/nucl_gb.accession2taxid --taxdump_path Seg_DB/taxdump --ref_viruses_path Seg_DB/ref_viruses_rep_genomes
-Note: --input:nt database location 
 ```
+Note: --input:nt database location 
 
 ## 2.Usage
 
@@ -85,7 +90,7 @@ Note: --input:nt database location
                --nr Seg_DB_PATH/nr \
                --only_rdrp_find 1
 ```
-
+Note:file_list.txt contains the prefix name of the file;The file name must be prefixed_1/2.fq.gz format
 #### Step 2: segmented RNA virus finder 
 ```
 ./SegFinder.sh --indata PATH/data \
@@ -99,4 +104,5 @@ Note: --input:nt database location
                --library_ID $file \
                --method salmon  \
                --nr Seg_DB_PATH/nr
+Note:list.txt contains the prefix name of the file;The file name must be prefixed_1/2.fq.gz format
 ```  
